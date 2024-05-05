@@ -1,6 +1,9 @@
 # CPW 204 Book Store
 This repository is a class example used to gain experience with source control and TypeScript
 
+## Live Website
+Check out the live website hosted by [GitHub pages](https://jovanniramirez.github.io/CPW204Bookstore/)
+
 ## Getting started
 
 ### Installing TypeScript
