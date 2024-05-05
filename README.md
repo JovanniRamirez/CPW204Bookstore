@@ -2,7 +2,7 @@
 This repository is a class example used to gain experience with source control and TypeScript
 
 ## Live Website
-Check out the live website hosted by [GitHub pages](https://jovanniramirez.github.io/CPW204Bookstore/)
+Check out the live website hosted by [GitHub pages](https://jovanniramirez.github.io/CPW204Bookstore/) (live website link)
 
 ## Getting started
 
