@@ -18,6 +18,7 @@ function processBook() {
     }
 }
 function getBook() {
+    clearAllErroMessages();
     let isbnTextBox = document.querySelector("#isbn");
     let titleTextBox = document.querySelector("#title");
     let priceTextBox = document.querySelector("#price");
@@ -51,4 +52,11 @@ function isValidISBN(data) {
     return regex.test(data);
 }
 function addBook(b) {
+}
+function clearAllErroMessages() {
+    let allSpans = document.querySelectorAll("span.error-msg");
+    for (let i = 0; i < allSpans.length; i++) {
+        let currentSpan = allSpans[i];
+        currentSpan.textContent = "";
+    }
 }

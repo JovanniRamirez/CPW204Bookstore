@@ -57,6 +57,8 @@ function processBook() {
  * will be shown on the webpage.
  */
 function getBook():Book {
+    clearAllErroMessages();
+
     //Get all inputs
     let isbnTextBox = document.querySelector("#isbn") as HTMLInputElement;
     let titleTextBox = document.querySelector("#title") as HTMLInputElement;
@@ -115,4 +117,20 @@ function isValidISBN(data:string) {
  */
 function addBook(b:Book):void {
 
+}
+
+/**
+ * Clears all the validation error messages spans
+ * in the form
+ */
+function clearAllErroMessages(){
+    //Get all error spans
+    let allSpans = document.querySelectorAll("span.error-msg");
+
+    //Loop through, set each span to an empty string
+    //allSpans.forEach(span => span.textContent = "");
+    for (let i = 0; i < allSpans.length; i++) {
+        let currentSpan = allSpans[i];
+        currentSpan.textContent = "";
+    }
 }
