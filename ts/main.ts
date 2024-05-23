@@ -25,13 +25,13 @@ class Book {
 }
 
 // Book object test code
-let myBook = new Book();
-myBook.isbn = "123";
-myBook.price = 9.99;
-myBook.title = "Programming for Beginners";
-myBook.releaseDate = new Date(2023, 9, 8); //months start at index 0
+// let myBook = new Book();
+// myBook.isbn = "123";
+// myBook.price = 9.99;
+// myBook.title = "Programming for Beginners";
+// myBook.releaseDate = new Date(2023, 9, 8); //months start at index 0
 
-console.log(myBook);
+// console.log(myBook);
 
 window.onload = function() {
     // Set up button click for add book form
