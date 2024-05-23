@@ -123,13 +123,33 @@ function isValidISBN(data:string) {
 }
 
 /**
- * Adds a book object to web storage. Assumes
+ * Adds a book object to web and web storage. Assumes
  * all data is valid
  * @param b The Book contains valid data to be added
  */
 function addBook(b:Book):void {
-    alert("Data was valid, book added");
+    // alert("Data was valid, book added");
     console.log(b);
+
+    //add the book to the webpage
+    let bookDiv: HTMLDivElement = document.createElement("div");
+
+    let titleHeading = document.createElement("h2");
+    titleHeading.textContent = b.title + ":" + b.isbn; //`${b.title} : ${b.isbn}`; non concatenation
+    
+    //add h2 to book div <div><h2>Title : ISBN</h2></div>
+    bookDiv.appendChild(titleHeading); 
+
+    //add bookDiv to webpage
+    let bookListDisplay = document.querySelector("#book-display");
+    bookListDisplay.appendChild(bookDiv); //add the newly created book
+    
+    // same ^^ document.querySelector("#book-display").appendChild(bookDiv);
+    //string version document.querySelector("#book-display").innerHTML += `<div><h2>${b.title}:${b.isbn}</h2></div>`;
+    
+    let bookDescription:HTMLParagraphElement = document.createElement("p");
+    bookDescription.textContent = `This book was released on ${b.releaseDate} and costs ${b.price}`;
+    bookDiv.appendChild(bookDescription);
 }
 
 /**
