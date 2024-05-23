@@ -148,7 +148,14 @@ function addBook(b:Book):void {
     //string version document.querySelector("#book-display").innerHTML += `<div><h2>${b.title}:${b.isbn}</h2></div>`;
     
     let bookDescription:HTMLParagraphElement = document.createElement("p");
-    bookDescription.textContent = `This book was released on ${b.releaseDate} and costs ${b.price}`;
+    const currencyFormatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    })
+
+    let formattedPrice = currencyFormatter.format(b.price);
+
+    bookDescription.textContent = `Book was released on ${b.releaseDate} and costs ${formattedPrice}`;
     bookDiv.appendChild(bookDescription);
 }
 
