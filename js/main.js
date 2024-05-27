@@ -7,7 +7,8 @@ window.onload = function () {
 function processBook() {
     let userBook = getBook();
     if (userBook != null) {
-        addBook(userBook);
+        addBookToWebPage(userBook);
+        addBookToStorage(userBook);
     }
 }
 function getBook() {
@@ -58,7 +59,7 @@ function isValidISBN(data) {
     let regex = /^\d{13}$/;
     return regex.test(data);
 }
-function addBook(b) {
+function addBookToWebPage(b) {
     console.log(b);
     let bookDiv = document.createElement("div");
     let titleHeading = document.createElement("h2");
@@ -74,6 +75,18 @@ function addBook(b) {
     let formattedPrice = currencyFormatter.format(b.price);
     bookDescription.textContent = `Book was released on ${b.releaseDate} and costs ${formattedPrice}`;
     bookDiv.appendChild(bookDescription);
+}
+function addBookToStorage(b) {
+    const BookStorageKey = "Books";
+    let bookData = localStorage.getItem(BookStorageKey);
+    if (bookData == null) {
+        let books = [];
+        books.push(b);
+        bookData = JSON.stringify(books);
+        localStorage.setItem(BookStorageKey, bookData);
+    }
+    else {
+    }
 }
 function clearAllErroMessages() {
     let allSpans = document.querySelectorAll("span.error-msg");
